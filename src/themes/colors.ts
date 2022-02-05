@@ -2,6 +2,7 @@ export const COLORS = {
   PRIMARY: '#117EFF',
   SECONDARY: '#00E1FF',
   TERTIARY: '#1A1731',
+  QUATERNARY: '#E4E6F1',
   
   ICON_BLUE: '#3FA8F4',
   ICON_ORANGE: '#EBBD3E',
@@ -11,4 +12,5 @@ export const COLORS = {
   ICON_KHAKI: '#C1CA4F',
 
   NEUTRAL: '#EBEEF6',
+  WHITE: '#ffffff'
 };

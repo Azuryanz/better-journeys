@@ -11,8 +11,8 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  BACKGROUND: '#FAFBFF',
-  FOREGROUND: '#FFFFFF',
+  BACKGROUND: '#121023',
+  FOREGROUND: '#232136',
   PRIMARY: '#117EFF',
   SECONDARY: '#00E1FF',
   TEXT: '#EEE',
@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
    margin:0px;
    padding: 0px;
 }
-body, button,input {
+body, button, input {
    margin: 0;
    padding: 0;
    background-color: ${({ theme }) => theme.BACKGROUND};

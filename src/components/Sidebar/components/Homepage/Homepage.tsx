@@ -7,18 +7,17 @@ import { Container, Wrapper } from './styles';
 
 export type Props = {
   active?: boolean;
-  text?: string;
-  icon?: React.ComponentProps<any>;
   router?: string;
 };
 
-export const Item = ({ text, icon, router }: Props) => {
+export const Homepage = ({ router }: Props) => {
   const { pathname } = useRouter();
   return (
-    <Container active={pathname === router}>
+    <Container >
       <Link href={router || '/'}>
-        <Wrapper>
-          {icon} <span>{text}</span>
+        <Wrapper active={pathname === router}>
+          <div className="baseIcon">D1</div>
+          <div className="baseInactive"></div>
         </Wrapper>
       </Link>
     </Container>
