@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Filter from './Filter';
 
 import { BsGrid3X3Gap, BsPencil } from 'react-icons/bs'
@@ -8,20 +8,48 @@ import { IoBedOutline } from 'react-icons/io5'
 
 import { Container } from './styles';
 import { COLORS } from '@themes/colors';
+import { api } from 'src/services/api';
 
 export const Filters: React.FC = () => {
-  const icons = [BsGrid3X3Gap, BiSend, FiPlayCircle, BsPencil, IoBedOutline, FiCheck];
-  const colors = [COLORS.ICON_PINK, COLORS.ICON_KHAKI, COLORS.ICON_GREEN, COLORS.ICON_BLUE, COLORS.ICON_ORANGE, COLORS.ICON_GRAY];
-  const names = ["Todas", "Enviando", "Ativadas", "Configurando", "Ociosa", "Concluída"];
-  const quantities = [12, 12, 15, 25, 45, 65];
+  const [filters, setFilters] = useState<any[]>([]);
+
+  const icons = [
+    BsGrid3X3Gap, 
+    BiSend, 
+    FiPlayCircle, 
+    BsPencil, 
+    IoBedOutline, 
+    FiCheck
+  ];
+  const colors = [
+    COLORS.ICON_PINK, 
+    COLORS.ICON_KHAKI, 
+    COLORS.ICON_GREEN, 
+    COLORS.ICON_BLUE, 
+    COLORS.ICON_ORANGE, 
+    COLORS.ICON_GRAY
+  ];
+
+  useEffect(() => {
+    api.get('/filter')
+      .then(response => {
+        const filters = response.data;
+        setFilters(filters)
+      })
+  }, []);
 
   return (
     <Container>
-      {icons.map((icon, index) => {
-      const Icon = icon
+      {filters.map(({id, name, quantity}) => {
+      const Icon = icons[id];
 
       return (
-        <Filter icon={<Icon color={colors[index]}/>} name={names[index]} quantity={quantities[index]}/>
+        <Filter 
+          key={id} 
+          icon={<Icon color={colors[id]}/>} 
+          name={name} 
+          quantity={quantity}
+        />
       )
     })}
     </Container>
