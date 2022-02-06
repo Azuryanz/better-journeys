@@ -7,6 +7,7 @@ export const lightTheme = {
   FOREGROUND: '#FFFFFF',
   PRIMARY: '#117EFF',
   SECONDARY: '#00E1FF',
+  NEUTRAL: '#d6d6d6',
   TEXT: '#3E4157',
 };
 
@@ -15,6 +16,7 @@ export const darkTheme = {
   FOREGROUND: '#232136',
   PRIMARY: '#117EFF',
   SECONDARY: '#00E1FF',
+  NEUTRAL: '#343247',
   TEXT: '#EEE',
 };
 
@@ -27,7 +29,6 @@ export const GlobalStyles = createGlobalStyle`
 body, button, input {
    margin: 0;
    padding: 0;
-   background-color: ${({ theme }) => theme.BACKGROUND};
    color:${({ theme }) => theme.TEXT};
    font-weight: 400;
    font-style: normal;
@@ -40,11 +41,18 @@ body{
   align-items: center;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
+  background-color: ${({ theme }) => theme.BACKGROUND};
   overflow: hidden;
 }
 input, textarea, button {
   font-family: 'Montserrat', sans-serif;
-
+  background-color: ${({ theme }) => theme.FOREGROUND};
+  border: 1px solid ${({ theme }) => theme.NEUTRAL};
+  
+  &:focus, &:active {
+    outline-style: solid;
+    outline-color: ${({ theme }) => theme.PRIMARY};
+  }
 }
 
 

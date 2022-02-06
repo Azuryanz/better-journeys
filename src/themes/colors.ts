@@ -11,6 +11,6 @@ export const COLORS = {
   ICON_GREEN: '#35C667',
   ICON_KHAKI: '#C1CA4F',
 
-  NEUTRAL: '#EBEEF6',
+  NEUTRAL: '#454358',
   WHITE: '#ffffff'
 };
