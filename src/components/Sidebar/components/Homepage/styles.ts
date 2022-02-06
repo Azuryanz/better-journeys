@@ -7,7 +7,7 @@ export const Container = styled.div<Props>`
   display: flex;
   align-items: center;
 
-  margin: 10px 0;
+  margin: 10px 0 30px 0;
   cursor: pointer;
 
   transition: color 0.3s;

@@ -18,10 +18,16 @@ export const Container = styled.button`
 
   &:hover {
     filter: brightness(0.8);
-    /* box-shadow: 0 0 10px ${COLORS.NEUTRAL}; */
   }
 
   svg {
     margin-right: 10px;
+  }
+`;
+
+export const User = styled.div`
+  .tooltipCorrections {
+    font-size: 14px;
+    opacity: 1 !important
   }
 `;

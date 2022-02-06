@@ -8,9 +8,9 @@ export const Container = styled.div`
   align-items: center;
 
   width: 30px;
-  margin-top: -20px;
-  margin-bottom: 10px;
 
+  margin: 10px 0;
+  
   span {
     margin: 25px 0 25px -5px;
     transform: rotate(90deg);

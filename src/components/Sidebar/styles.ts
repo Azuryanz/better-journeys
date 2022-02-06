@@ -28,9 +28,7 @@ export const Container = styled.div`
     justify-content: space-between;
   }
 
-  .content {
-    padding: 20px 0;
-    
+  .separator {
     border-width: 1px;
     border-style: solid;
     border-image: linear-gradient(to right, #00E1FF, #117EFF) 1;
