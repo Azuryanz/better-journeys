@@ -40,12 +40,12 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', 'Montserrat', sans-serif;
   background-color: ${({ theme }) => theme.BACKGROUND};
   overflow: hidden;
 }
 input, textarea, button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', 'Montserrat', sans-serif;
   background-color: ${({ theme }) => theme.FOREGROUND};
   border: 1px solid ${({ theme }) => theme.NEUTRAL};
   

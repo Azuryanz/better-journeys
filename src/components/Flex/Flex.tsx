@@ -7,6 +7,7 @@ export type FlexProps = {
   align?: string;
   direction?: string;
   width?: string;
+  height?: string;
   children: React.ReactNode;
 };
 
@@ -16,6 +17,7 @@ export const Flex = ({
   justify,
   align,
   width,
+  height
 }: FlexProps) => {
   return (
     <Container
@@ -23,6 +25,7 @@ export const Flex = ({
       justify={justify}
       align={align}
       width={width}
+      height={height}
     >
       {children}
     </Container>

@@ -12,7 +12,6 @@ export type Props = {
   active?: boolean;
   icon?: React.ComponentProps<any>;
   router?: string;
-  onClick?: () => void;
 };
 
 export const Item = ({ icon, router, name }: Props) => {

@@ -8,6 +8,7 @@ export const Container = styled.div<FlexProps>`
   justify-content: ${(props) => (props.justify ? props.justify : 'initial')};
   align-items: ${(props) => (props.align ? props.align : 'initial')};
   width: ${(props) => (props.width ? `${props.width}` : 'initial')};
+  height: ${(props) => (props.height ? `${props.height}` : 'initial')};
   height: 100%;
   width: 100%;
 `;

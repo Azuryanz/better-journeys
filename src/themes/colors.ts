@@ -12,5 +12,6 @@ export const COLORS = {
   ICON_KHAKI: '#C1CA4F',
 
   NEUTRAL: '#454358',
+  GRAY: '#9D9D9D',
   WHITE: '#ffffff'
 };

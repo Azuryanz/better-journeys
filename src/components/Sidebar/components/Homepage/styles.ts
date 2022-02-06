@@ -20,6 +20,7 @@ export const Wrapper = styled.div<Props>`
   margin-left: -20px;
   margin-bottom: 10px;
 
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: 800;
   
