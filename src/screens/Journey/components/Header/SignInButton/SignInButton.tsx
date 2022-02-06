@@ -19,7 +19,7 @@ export const SignInButton: React.FC = () => {
   return session 
   ? (
       <User data-tip data-for={session.user?.name!}>
-      <Avatar name={session.user?.name!}/>
+      <Avatar name={session.user?.name!} size={30}/>
       {isMounted && 
         <ReactTooltip 
           id={session.user?.name!} 

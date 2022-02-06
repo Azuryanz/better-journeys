@@ -16,7 +16,7 @@ export const Container = styled.button<Props>`
   width: ${(props) => (props.size ? `${props.size}px` : '45px')};
   height: ${(props) => (props.size ? `${props.size}px` : '45px')};
 
-  font-size: 16px;
+  font-size: 12px;
   color: ${COLORS.WHITE};
   background-color: ${(props) => `#${(props.color)}`};
 `;

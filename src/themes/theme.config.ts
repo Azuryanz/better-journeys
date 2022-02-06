@@ -9,6 +9,7 @@ export const lightTheme = {
   SECONDARY: '#00E1FF',
   NEUTRAL: '#d6d6d6',
   TEXT: '#3E4157',
+  GRAY: '#989CB0',
 };
 
 export const darkTheme = {
@@ -18,6 +19,7 @@ export const darkTheme = {
   SECONDARY: '#00E1FF',
   NEUTRAL: '#343247',
   TEXT: '#EEE',
+  GRAY: '#7D8997',
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -27,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0px;
   }
 
-  body, button, input, select {
+  body, button, input {
     margin: 0;
     padding: 0;
     color:${({ theme }) => theme.TEXT};
@@ -50,7 +52,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
   }
 
-  input, textarea, button, select {
+  input, textarea, button {
     font-family: 'Roboto', 'Montserrat', sans-serif;
     background-color: ${({ theme }) => theme.FOREGROUND};
     border: 1px solid ${({ theme }) => theme.NEUTRAL};

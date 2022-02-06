@@ -10,5 +10,6 @@ declare module 'styled-components' {
     SECONDARY: string;
     NEUTRAL: string;
     TEXT: string;
+    GRAY: string;
   }
 }

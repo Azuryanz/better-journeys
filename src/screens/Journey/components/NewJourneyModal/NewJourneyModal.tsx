@@ -38,31 +38,7 @@ export function NewJourneyModal({isOpen, onRequestClose}: Props) {
           value={name}
           onChange={event => setName(event.target.value)}
         />
-
-        <label htmlFor='recipients'>Informa a <strong>quantidade</strong> de recipientes</label>
-        <input 
-          type="text"
-          id="recipients"
-          value={recipients}
-          onChange={event => setRecipients(event.target.value)}
-        />
-
-        <label htmlFor='success'>Informe a <strong>porcentagem</strong> de sucesso</label>
-        <input 
-          type="text"
-          id='success'
-          value={success}
-          onChange={event => setSuccess(event.target.value)}
-        />
-
-        <label htmlFor='status'>Insira a <strong>categoria</strong> desta Jornada</label>
-        <select id='status' value={status} onChange={event => setStatus(Number(event.target.value))}>
-          <option value={1}>Em execução</option>
-          <option value={2}>Ativa</option>
-          <option value={3}>Configurando</option>
-          <option value={4}>Ociosa</option>
-          <option value={5}>Concluída</option>
-        </select>
+        <p>Você poderá alterar essa informação depois</p>
 
         <span>
           <button type="submit">Continuar</button>

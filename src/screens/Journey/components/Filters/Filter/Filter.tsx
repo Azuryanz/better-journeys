@@ -5,6 +5,7 @@ import { BsGrid3X3Gap, BsPencil } from 'react-icons/bs';
 import { FiPlayCircle, FiCheck } from 'react-icons/fi';
 import { IoBedOutline } from 'react-icons/io5';
 import { FiltersContext } from 'src/FiltersContext';
+import { api } from 'src/services/api';
 
 import { Container } from './styles';
 
@@ -14,16 +15,10 @@ export type Props = {
   onClick?: () => void;
 }
 
-export const Filter: React.FC<Props> = ({ id, disabled=false }: Props) => {
-  const filters = useContext(FiltersContext);
+export function Filter({ id, disabled=false }: Props) {
+  const {filters, setItems} = useContext(FiltersContext);
   const [state, setState] = useState(false);
-  const [isMounted,setIsMounted] = useState(false); 
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsMounted(true);
-    }, 10);
-  },[]);
+  const [currentFilter, setCurrentFilter] = useState(0);
 
   const icons = [
     BsGrid3X3Gap, 
@@ -43,15 +38,39 @@ export const Filter: React.FC<Props> = ({ id, disabled=false }: Props) => {
     COLORS.ICON_GRAY
   ];
 
+
+  function handleFilter(id: number) {
+    if(id > 0 && currentFilter != id) {
+      setCurrentFilter(id)
+      api.get(`/journey/${id}`)
+      .then(response => {
+        setItems!(response.data)
+      })
+    } else if(id > 0 && currentFilter == id) {
+      setCurrentFilter(id)
+      api.get('/journey')
+      .then(response => {
+        setItems!(response.data);
+      })
+    } else {
+      setCurrentFilter(id)
+      api.get('/journey')
+      .then(response => {
+        setItems!(response.data);
+      })
+    }
+    setState(!state)
+  }
+
   const Icon = icons[id!]
 
   return (
-    <Container onClick={() => setState(!state)} className={disabled ? 'disabled' : state ? 'active' : 'standby'} color={colors[id]}>
+    <Container onClick={() => handleFilter(id)} className={disabled ? 'disabled' : state ? 'active' : 'standby'} color={colors[id]}>
       <div>
         <Icon color={colors[id]} />
-        {isMounted && <p>{filters[id].name}</p>}
+        <p>{filters![id]?.name}</p>
       </div>
-      {isMounted && !!filters[id].quantity && <span>{filters[id].quantity}</span>}
+      {!disabled &&!!filters![id]?.quantity && <span>{filters![id]?.quantity}</span>}
     </Container>
   );
 };

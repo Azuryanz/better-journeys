@@ -13,7 +13,7 @@ export const Container = styled.form`
     margin-bottom: 20px;
   }
 
-  input, select {
+  input {
     font-size: 14px;
 
     margin-top: 5px;
@@ -23,12 +23,17 @@ export const Container = styled.form`
     border-radius: 5px;
   }
 
+  p {
+    font-size: 14px;
+    color: ${props => props.theme.GRAY};
+  }
+
   span {
     display:  flex;
     justify-content: center;
     align-items: center;
 
-    margin-top: 10px;
+    margin-top: 20px;
 
     button {
       margin-right: 30px;

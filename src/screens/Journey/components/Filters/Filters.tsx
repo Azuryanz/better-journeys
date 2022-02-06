@@ -7,11 +7,11 @@ import { FiltersContext } from 'src/FiltersContext';
 
 
 export const Filters: React.FC = () => {
-  const filters = useContext(FiltersContext);
+  const {filters} = useContext(FiltersContext);
 
   return (
     <Container>
-      {filters.map(({}, index) => {
+      {filters?.map(({}, index:number) => {
         return (
           <Filter key={index} id={index} />
         )

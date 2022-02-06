@@ -20,17 +20,8 @@ type TableProps = {
 }
 
 export const JourneysTable: React.FC = () => {
-  const filters = useContext(FiltersContext);
-  const [items, setItems] = useState<any[]>([]);
-
-  useEffect(() => {
-    api.get('/journey')
-      .then(response => {
-        const items= response.data;
-        setItems(items);
-      })
-  }, []);
-
+  const {items} = useContext(FiltersContext)
+  
   return (
     <Container>
       <table>
@@ -45,15 +36,14 @@ export const JourneysTable: React.FC = () => {
 
         <tbody>
           
-          {items.map(({status, name, recipients, success, id}: TableProps) => {
-
+          {items?.map(({status, name, recipients, success, id}: TableProps) => {
             return (
               <tr key={id}>
                 <td>{name}</td> 
                 <td>{recipients}</td>
                 <td>{success}</td>
                 <td>
-                <Filter id={status}/>
+                  <Filter id={status} disabled={true}/>
                 </td>
               </tr>
             )
