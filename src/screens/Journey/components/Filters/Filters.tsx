@@ -10,6 +10,12 @@ import { Container } from './styles';
 import { COLORS } from '@themes/colors';
 import { api } from 'src/services/api';
 
+type FilterProps = {
+  id: number;
+  name: string;
+  quantity: number;
+}
+
 export const Filters: React.FC = () => {
   const [filters, setFilters] = useState<any[]>([]);
 
@@ -40,12 +46,13 @@ export const Filters: React.FC = () => {
 
   return (
     <Container>
-      {filters.map(({id, name, quantity}) => {
+      {filters.map(({id, name, quantity}: FilterProps) => {
       const Icon = icons[id];
 
       return (
         <Filter 
           key={id} 
+          id={id}
           icon={<Icon color={colors[id]}/>} 
           name={name} 
           quantity={quantity}

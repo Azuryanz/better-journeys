@@ -11,7 +11,7 @@ export type Props = {
   onClick?: () => void;
 }
 
-export const Filter: React.FC<Props> = ({ name, quantity, icon}: Props) => {
+export const Filter: React.FC<Props> = ({ name, quantity, icon }: Props) => {
   const [state, setState] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ export const Filter: React.FC<Props> = ({ name, quantity, icon}: Props) => {
         {icon}
         <p>{name}</p>
       </div>
-      <span>{quantity}</span>
+      {!!quantity && <span>{quantity}</span>}
     </Container>
   );
 };

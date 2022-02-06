@@ -35,7 +35,6 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
     font-size: 13px;
 
     border: none;
@@ -62,7 +61,7 @@ export const Container = styled.div`
       color: ${props => props.theme.TEXT};
       background-color: ${props => props.theme.FOREGROUND};
       
-      filter: brightness(0.90);
+      filter: brightness(0.95);
 
       transition: all 0.3s;
     }
@@ -74,7 +73,7 @@ export const Container = styled.div`
       }
 
       span {
-        filter: brightness(0.93);
+        filter: brightness(0.98);
       }
     }
   }

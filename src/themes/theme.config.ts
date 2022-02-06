@@ -13,7 +13,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   BACKGROUND: '#121023',
-  FOREGROUND: '#232136',
+  FOREGROUND: '#18152D',
   PRIMARY: '#117EFF',
   SECONDARY: '#00E1FF',
   NEUTRAL: '#343247',

@@ -7,6 +7,7 @@ import Filters from './components/Filters';
 import Header from './components/Header';
 
 import { Container } from './styles';
+import { JourneysTable } from './components/JourneysTable/JourneysTable';
 
 export const Journey: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ export const Journey: React.FC = () => {
       <Spacing vertical={10}/>
       <Flex direction="row" justify="space-between" align="flex-start">
         <Filters />
-        <div>Tabela</div>
+        <JourneysTable />
       </Flex>
     </Container>
   );
