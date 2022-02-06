@@ -21,7 +21,7 @@ export const Container = styled.button`
   background-image: linear-gradient(to right, #117EFF, #117EFF);
 
   position: relative;
-  z-index: 100;
+  z-index: 0;
 
   &:before {
     content: '';    
@@ -37,7 +37,7 @@ export const Container = styled.button`
     opacity: 0;
     position: absolute;
     top: 0; left: 0;
-    z-index: -100;
+    z-index: -1;
 
     transition: opacity 0.3s;
   }

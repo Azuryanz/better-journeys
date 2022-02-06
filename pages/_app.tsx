@@ -8,6 +8,11 @@ import Sidebar from '@components/Sidebar';
 import { ContainerStyled } from '@components/Container/styles';
 import { GlobalStyles, lightTheme, darkTheme } from '@themes/theme.config';
 
+import Modal from 'react-modal';
+import { FiltersProvider } from 'src/FiltersContext';
+
+Modal.setAppElement('#__next');
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [theme, setTheme] = useState("light");
   
@@ -22,7 +27,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         <Flex>
           <SessionProvider session={session}>
             <Sidebar onClick={toggleTheme} />
+            <FiltersProvider>
               <Component {...pageProps} />
+            </FiltersProvider>
           </SessionProvider>
         </Flex>
       </ContainerStyled>

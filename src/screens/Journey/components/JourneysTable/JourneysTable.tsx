@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Filter from '../Filters/Filter';
 import { api } from 'src/services/api';
 
@@ -9,6 +9,7 @@ import { COLORS } from '@themes/colors';
 import { FiCheck, FiPlayCircle } from 'react-icons/fi';
 import { IoBedOutline } from 'react-icons/io5';
 import { BsGrid3X3Gap, BsPencil } from 'react-icons/bs';
+import { FiltersContext } from 'src/FiltersContext';
 
 type TableProps = {
   name: string;
@@ -19,33 +20,8 @@ type TableProps = {
 }
 
 export const JourneysTable: React.FC = () => {
+  const filters = useContext(FiltersContext);
   const [items, setItems] = useState<any[]>([]);
-  const [filters, setFilters] = useState<any[]>([]);
-
-  const icons = [
-    BsGrid3X3Gap, 
-    BiSend, 
-    FiPlayCircle, 
-    BsPencil, 
-    IoBedOutline, 
-    FiCheck
-  ];
-  const colors = [
-    COLORS.ICON_PINK, 
-    COLORS.ICON_KHAKI, 
-    COLORS.ICON_GREEN, 
-    COLORS.ICON_BLUE, 
-    COLORS.ICON_ORANGE, 
-    COLORS.ICON_GRAY
-  ];
-
-  useEffect(() => {
-    api.get('/filter')
-      .then(response => {
-        const filters = response.data;
-        setFilters(filters)
-      })
-  }, []);
 
   useEffect(() => {
     api.get('/journey')
@@ -70,7 +46,6 @@ export const JourneysTable: React.FC = () => {
         <tbody>
           
           {items.map(({status, name, recipients, success, id}: TableProps) => {
-            const Icon = icons[status];
 
             return (
               <tr key={id}>
@@ -78,15 +53,10 @@ export const JourneysTable: React.FC = () => {
                 <td>{recipients}</td>
                 <td>{success}</td>
                 <td>
-                <Filter 
-                  key={id} 
-                  id={status}
-                  icon={<Icon color={colors[status]}/>} 
-                  name={filters[status].name} 
-                />
+                <Filter id={status}/>
                 </td>
               </tr>
-                )
+            )
           })}
                 
         </tbody>

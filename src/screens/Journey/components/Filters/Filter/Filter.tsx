@@ -1,26 +1,57 @@
-import React, { useState } from 'react';
-import { useTheme } from 'styled-components';
+import { COLORS } from '@themes/colors';
+import React, { useContext, useEffect, useState } from 'react';
+import { BiSend } from 'react-icons/bi';
+import { BsGrid3X3Gap, BsPencil } from 'react-icons/bs';
+import { FiPlayCircle, FiCheck } from 'react-icons/fi';
+import { IoBedOutline } from 'react-icons/io5';
+import { FiltersContext } from 'src/FiltersContext';
 
 import { Container } from './styles';
 
 export type Props = {
-  id?: number;
-  name?: string;
-  quantity?: number;
-  icon?: React.ComponentProps<any>;
+  id: number;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
-export const Filter: React.FC<Props> = ({ name, quantity, icon }: Props) => {
+export const Filter: React.FC<Props> = ({ id, disabled=false }: Props) => {
+  const filters = useContext(FiltersContext);
   const [state, setState] = useState(false);
+  const [isMounted,setIsMounted] = useState(false); 
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 10);
+  },[]);
+
+  const icons = [
+    BsGrid3X3Gap, 
+    BiSend, 
+    FiPlayCircle, 
+    BsPencil, 
+    IoBedOutline, 
+    FiCheck
+  ];
+
+  const colors = [
+    COLORS.ICON_PINK, 
+    COLORS.ICON_KHAKI, 
+    COLORS.ICON_GREEN, 
+    COLORS.ICON_BLUE, 
+    COLORS.ICON_ORANGE, 
+    COLORS.ICON_GRAY
+  ];
+
+  const Icon = icons[id!]
 
   return (
-    <Container onClick={() => setState(!state)} className={state ? 'active' : 'standby'}>
+    <Container onClick={() => setState(!state)} className={disabled ? 'disabled' : state ? 'active' : 'standby'} color={colors[id]}>
       <div>
-        {icon}
-        <p>{name}</p>
+        <Icon color={colors[id]} />
+        {isMounted && <p>{filters[id].name}</p>}
       </div>
-      {!!quantity && <span>{quantity}</span>}
+      {isMounted && !!filters[id].quantity && <span>{filters[id].quantity}</span>}
     </Container>
   );
 };

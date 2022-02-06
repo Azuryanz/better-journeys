@@ -44,6 +44,16 @@ export const Container = styled.div`
     height: 25px;
   }
 
+  /* O filtro não é clicável */
+  &.disabled {
+    cursor: default;
+    
+    color: ${props => props.theme.TEXT};
+    font-weight: 400;
+
+    transition: all 0.3s;
+  }
+
   /* Controle das cores quando o filtro não está selecionado */
   &.standby {
     /* nome do filtro */

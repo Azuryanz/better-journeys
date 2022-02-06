@@ -6,7 +6,11 @@ import SignInButton from './SignInButton';
 
 import { Container } from './styles';
 
-export const Header: React.FC = () => {
+type Props = {
+  onOpenNewJourneyModal: () => void;
+}
+
+export function Header({ onOpenNewJourneyModal }: Props) {
   return (
     <Container>
       <div className="left">
@@ -15,7 +19,7 @@ export const Header: React.FC = () => {
       </div>
       <div className="right">
         <Searchbar />
-        <Button />
+        <Button onClick={onOpenNewJourneyModal}/>
       </div>
     </Container>
   );
