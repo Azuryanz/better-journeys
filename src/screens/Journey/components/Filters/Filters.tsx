@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react';
-import Filter from './Filter';
+import React, { useContext } from 'react';
 
-import { Container } from './styles';
 import { FiltersContext } from 'src/FiltersContext';
 
+import { Container } from './styles';
+import Filter from './Filter';
 
-
-export const Filters: React.FC = () => {
+export const Filters = () => {
   const {filters} = useContext(FiltersContext);
 
   return (

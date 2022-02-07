@@ -8,6 +8,7 @@ export const Container = styled.div<Props>`
   align-items: center;
 
   margin: 10px 0 30px 0;
+
   cursor: pointer;
 
   transition: color 0.3s;
@@ -15,8 +16,10 @@ export const Container = styled.div<Props>`
 
 export const Wrapper = styled.div<Props>`
   display: flex;
+
   width: 20px;
   height: 20px;
+
   margin-left: -20px;
   margin-bottom: 10px;
 
@@ -27,6 +30,7 @@ export const Wrapper = styled.div<Props>`
   color: ${(props) => (props.active ? COLORS.WHITE : COLORS.QUATERNARY)};
   
   position: relative;
+
   transition: color 0.3s;
 
   &:hover {
@@ -40,8 +44,10 @@ export const Wrapper = styled.div<Props>`
   .baseInactive {
     height: 2px;
     width: 30px;
+
     margin-left: 10px;
     margin-top: 17px;
+    
     background: linear-gradient(to right, #00E1FF, #117EFF)
   }
 `;

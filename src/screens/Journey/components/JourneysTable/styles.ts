@@ -7,10 +7,10 @@ export const Container = styled.div`
   width: 70%;
   height: 95%;
 
+  margin-top: -10px;
+
   overflow-y: scroll;
   scroll-behavior: smooth;
-
-  margin-top: -10px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -21,10 +21,12 @@ export const Container = styled.div`
 
   table {
     width: 100%;
+
     border-spacing: 0 8px;
 
     th {
       text-align: left;
+
       padding: 0 20px 10px 20px;
       
       color: ${props => props.theme.NEUTRAL};
@@ -34,19 +36,23 @@ export const Container = styled.div`
 
     td {
       padding: 15px 20px;
+
       background-color: ${props => props.theme.FOREGROUND};
 
       transition: background-color 0.3s;
+
       div {
         margin-bottom: 0;
       }
     }
 
     td:first-child {
+      width: 35%;
+      
       font-weight: 700;
+
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
-      width: 35%;
     }
 
     td:nth-child(2) {
@@ -58,9 +64,10 @@ export const Container = styled.div`
     }
 
     td:last-child {
+      width: 20%;
+      
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
-      width: 20%;
     }
     
   }

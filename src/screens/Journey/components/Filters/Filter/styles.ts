@@ -3,21 +3,19 @@ import styled from 'styled-components';
 import { COLORS } from '@themes/colors';
 
 export const Container = styled.div`
-  /* Definição do container básico */
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  font-size: 14px;
-
   width: 100%;
-
+  
   margin-right: 20px;
   margin-bottom: 10px;
 
+  font-size: 14px;
+
   cursor: pointer;
 
-  /* Display do ícone e nome */
   div {
     display: flex;
     justify-content: center;
@@ -30,45 +28,41 @@ export const Container = styled.div`
     }
   }
 
-  /* Display das quantidades */
   span {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
-
-    border: none;
-    border-radius: 100%;
-
+    
     width: 25px;
     height: 25px;
+    
+    border: none;
+    border-radius: 100%;
+    
+    font-size: 13px;
   }
 
-  /* O filtro não é clicável */
   &.disabled {
-    cursor: default;
-    
-    color: ${props => props.theme.TEXT};
     font-weight: 400;
+    color: ${props => props.theme.TEXT};
+
+    cursor: default;
 
     transition: all 0.3s;
   }
 
-  /* Controle das cores quando o filtro não está selecionado */
   &.standby {
-    /* nome do filtro */
     p {
-      color: ${props => props.theme.TEXT};
       font-weight: 400;
+      color: ${props => props.theme.TEXT};
 
       transition: all 0.3s;
     }
 
-    /* quantidade de elementos do filtro */
     span {
       font-weight: 700;
-      
       color: ${props => props.theme.TEXT};
+      
       background-color: ${props => props.theme.FOREGROUND};
       
       filter: brightness(0.95);
@@ -76,7 +70,6 @@ export const Container = styled.div`
       transition: all 0.3s;
     }
 
-    /* hover no filtro */
     &:hover {
       p {
         color: ${COLORS.PRIMARY};
@@ -88,17 +81,17 @@ export const Container = styled.div`
     }
   }
 
-  /* coontrole das cores com o filtro ativo */
   &.active {
     p {
-      color: ${COLORS.PRIMARY};
       font-weight: 700;
+      color: ${COLORS.PRIMARY};
 
       transition: all 0.3s;
     }
 
     span {
       color: ${COLORS.WHITE};
+      
       background: ${COLORS.PRIMARY};
 
       filter: brightness(1);

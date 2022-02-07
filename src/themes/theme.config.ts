@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { COLORS } from './colors';
-
 export const lightTheme = {
   BACKGROUND: '#FAFBFF',
   FOREGROUND: '#FFFFFF',
@@ -63,44 +61,28 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  ::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: ${COLORS.NEUTRAL};        /* color of the tracking area */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: ${COLORS.PRIMARY};    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid  ${
-      COLORS.NEUTRAL
-    }; /* creates padding around scroll thumb */
-  }
-
   .modalOverlay{
-    background: rgba(0, 0, 0, 0.7);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .modalContent {
     width: 100%;
     max-width: 500px;
 
-    background-color: ${({ theme }) => theme.BACKGROUND};
-
     border: none;
     border-radius: 10px;
+    
+    background-color: ${({ theme }) => theme.BACKGROUND};
   }
 
   .ReactModal__Overlay {

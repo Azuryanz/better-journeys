@@ -10,6 +10,7 @@ export const Container = styled.div`
   
   input {
     width: 300px;
+
     padding: 8px 10px 8px 30px;
     margin-left: -20px;
 
@@ -22,7 +23,9 @@ export const Container = styled.div`
 
   svg {
     margin-right: -5px;
+
     color: ${COLORS.PRIMARY};
+    
     transform: rotate(90deg);
   }
 `;

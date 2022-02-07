@@ -6,19 +6,19 @@ export const Container = styled.button`
   justify-content: space-between;
   align-items: center;
 
-  cursor: pointer;
-
   margin-left: 20px;
   padding: 8px 10px;
-
+  
   border: none;
   border-radius: 5px;
 
-  font-weight: bold;
   font-size: 12px;
+  font-weight: bold;
   color: ${ COLORS.WHITE};
-
+  
   background-image: linear-gradient(to right, #117EFF, #117EFF);
+  
+  cursor: pointer;
 
   position: relative;
   z-index: 0;
@@ -28,15 +28,18 @@ export const Container = styled.button`
     
     display: block;
     
-    height: 100%;
     width: 100%;
+    height: 100%;
 
     border-radius: inherit;
+
     background-image: linear-gradient(to right, #00E1FF, #117EFF);
     
     opacity: 0;
+
     position: absolute;
-    top: 0; left: 0;
+    top: 0; 
+    left: 0;
     z-index: -1;
 
     transition: opacity 0.3s;
@@ -50,6 +53,7 @@ export const Container = styled.button`
 
   svg {
     margin-right: 10px;
+    
     font-weight: bold;
     color: ${ COLORS.WHITE};
   }

@@ -1,9 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
-import { v4 } from 'uuid'
 
 import { Container } from './styles';
-import axios from 'axios';
 
 type Props = {
   isOpen: boolean;
@@ -12,9 +10,6 @@ type Props = {
 
 export function NewJourneyModal({isOpen, onRequestClose}: Props) {
   const [name, setName] = useState('');
-  const [recipients, setRecipients] = useState('');
-  const [success, setSuccess] = useState('');
-  const [status, setStatus] = useState(0);
 
   async function handleCreateNewJourney(event: FormEvent) {
     event.preventDefault();
@@ -44,6 +39,7 @@ export function NewJourneyModal({isOpen, onRequestClose}: Props) {
           <button type="submit">Continuar</button>
           <div onClick={onRequestClose}>Cancel</div>
         </span>
+        
       </Container>
     </Modal>
   );

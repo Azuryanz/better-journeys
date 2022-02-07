@@ -16,14 +16,6 @@ type Props = {
   styleTags: string;
 };
 
-/**
- * @export
- * @component
- * @name ApplicationDocument
- *
- * @description
- * Responsável por conter todas as configurações.
- */
 export default class ApplicationDocument extends Document<Props> {
   static async getInitialProps(
     ctx: DocumentContext

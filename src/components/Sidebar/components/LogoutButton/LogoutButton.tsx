@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+import { signOut, useSession } from 'next-auth/react';
 import ReactTooltip from 'react-tooltip';
 
-import { Container, Wrapper } from './styles';
 import { useTheme } from 'styled-components';
-import { signOut, useSession } from 'next-auth/react';
+import { Container, Wrapper } from './styles';
 
 export type Props = {
   name?: string;
@@ -22,7 +22,7 @@ export const LogoutButton = ({ icon, name }: Props) => {
   },[]);
  
   return session 
-  ? (
+    ? (
       <Container data-tip data-for={name} onClick={() => signOut()} >
         <Wrapper>
           {icon}
@@ -42,7 +42,7 @@ export const LogoutButton = ({ icon, name }: Props) => {
         }
       </Container>
     )
-  : (
+    : (
       <Container data-tip data-for={name} className="disabled">
         <Wrapper>
           {icon}

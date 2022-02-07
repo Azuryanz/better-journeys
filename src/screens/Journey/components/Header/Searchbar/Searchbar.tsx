@@ -6,8 +6,15 @@ import { Container } from './styles';
 export const Searchbar: React.FC = () => {
   return (
     <Container>
-      <label htmlFor='searchbar' ><IoSearch size={14} /></label>
-      <input type="text" placeholder="Buscar" name="searchbar" id="searchbar"/>
+      <label htmlFor='searchbar' >
+        <IoSearch size={14} />
+      </label>
+      <input 
+        type="text" 
+        placeholder="Buscar" 
+        name="searchbar" 
+        id="searchbar"
+      />
     </Container>
   );
 };

@@ -1,6 +1,10 @@
 import type { AppProps } from 'next/app';
+
 import { useState } from 'react';
+import Modal from 'react-modal';
+
 import { SessionProvider } from 'next-auth/react'
+import { FiltersProvider } from 'src/FiltersContext';
 import { ThemeProvider } from 'styled-components';
 
 import Flex from '@components/Flex';
@@ -8,8 +12,6 @@ import Sidebar from '@components/Sidebar';
 import { ContainerStyled } from '@components/Container/styles';
 import { GlobalStyles, lightTheme, darkTheme } from '@themes/theme.config';
 
-import Modal from 'react-modal';
-import { FiltersProvider } from 'src/FiltersContext';
 
 Modal.setAppElement('#__next');
 

@@ -1,15 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Filter from '../Filters/Filter';
-import { api } from 'src/services/api';
+import React, { useContext } from 'react';
 
-import { BiSend } from 'react-icons/bi'
+import { FiltersContext } from 'src/FiltersContext';
 
 import { Container } from './styles';
-import { COLORS } from '@themes/colors';
-import { FiCheck, FiPlayCircle } from 'react-icons/fi';
-import { IoBedOutline } from 'react-icons/io5';
-import { BsGrid3X3Gap, BsPencil } from 'react-icons/bs';
-import { FiltersContext } from 'src/FiltersContext';
+import Filter from '../Filters/Filter';
 
 type TableProps = {
   name: string;
@@ -35,7 +29,6 @@ export const JourneysTable: React.FC = () => {
         </thead>
 
         <tbody>
-          
           {items?.map(({status, name, recipients, success, id}: TableProps) => {
             return (
               <tr key={id}>
@@ -48,7 +41,6 @@ export const JourneysTable: React.FC = () => {
               </tr>
             )
           })}
-                
         </tbody>
       </table>
     </Container>

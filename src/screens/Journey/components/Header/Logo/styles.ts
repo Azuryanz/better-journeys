@@ -6,8 +6,8 @@ export const Container = styled.div`
   align-items: center;
 
   height: 50px;
-  padding: 10px;
 
+  padding: 10px;
   margin-left: 8px;
 
   h4 {

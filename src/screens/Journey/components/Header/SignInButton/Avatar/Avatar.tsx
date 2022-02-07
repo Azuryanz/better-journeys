@@ -8,22 +8,25 @@ export type Props = {
   color?: string;
 }
 
-export const Avatar: React.FC<Props> = ({ name, size }: Props) => {
+export const Avatar = ({ name, size }: Props) => {
   const getInitials = (name: string) => {
     let names = name.split(" ");
     let initials = names[0].substring(0, 1).toUpperCase();
 
     if (names.length > 1) {
-        initials += names[names.length - 1].substring(0, 1).toUpperCase();
+      initials += names[names.length - 1].substring(0, 1).toUpperCase();
     }
+
     return initials;
   }
 
   const hashCode = (name: string) => {
     let hash = 0;
+
     for (let i = 0; i < name.length; i++) {
        hash = name.charCodeAt(i) + ((hash << 5) - hash);
     }
+
     return hash;
   } 
 

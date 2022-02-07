@@ -6,12 +6,13 @@ import { Props } from './Item';
 export const Container = styled.div<Props>`
   display: flex;
   align-items: center;
-  cursor: pointer;
   
   padding: 10px 0;
   
   font-size: 20px;
   color: ${(props) => (props.active ? COLORS.PRIMARY : COLORS.QUATERNARY)};
+  
+  cursor: pointer;
 
   transition: color 0.3s;
 
@@ -21,6 +22,7 @@ export const Container = styled.div<Props>`
 
   .tooltipCorrections {
     font-size: 14px;
+    
     opacity: 1 !important
   }
 `;

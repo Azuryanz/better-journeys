@@ -2,11 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export const Administration: React.FC = () => {
+export const Administration = () => {
   return (
     <Container>
       <h1>Administration</h1>
-      <p>Nada aqui</p>
     </Container>
   );
 };

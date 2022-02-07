@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ReactTooltip from 'react-tooltip';
 
-import { Container, Wrapper } from './styles';
 import { useTheme } from 'styled-components';
+import { Container, Wrapper } from './styles';
 
 export type Props = {
   name?: string;

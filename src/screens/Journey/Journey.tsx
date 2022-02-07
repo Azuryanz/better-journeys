@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import Flex from '@components/Flex';
 import Spacing from '@components/Spacing';
 
+import { Container } from './styles';
 import Filters from './components/Filters';
 import Header from './components/Header';
-
-import { Container } from './styles';
 import { JourneysTable } from './components/JourneysTable/JourneysTable';
 import NewJourneyModal from './components/NewJourneyModal';
 
@@ -32,7 +31,10 @@ export const Journey: React.FC = () => {
         <JourneysTable />
       </Flex>
 
-      <NewJourneyModal isOpen={isNewJourneyModalOpen} onRequestClose={handleCloseNewJourneyModal} />
+      <NewJourneyModal 
+        isOpen={isNewJourneyModalOpen} 
+        onRequestClose={handleCloseNewJourneyModal} 
+      />
     </Container>
   );
 };

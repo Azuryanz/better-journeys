@@ -10,21 +10,24 @@ export const Container = styled.div`
   font-size: 20px;
   color: ${COLORS.QUATERNARY};
   
-  transition: color 0.3s;
   
   cursor: pointer;
+  
+  transition: color 0.3s;
 
   &:hover {
     color: ${COLORS.PRIMARY}
   }
 
   &.disabled {
-    cursor: default;
     color: ${COLORS.QUATERNARY};
+    
+    cursor: default;
   }
 
   .tooltipCorrections {
     font-size: 14px;
+
     opacity: 1 !important
   }
   

@@ -1,8 +1,7 @@
-import { COLORS } from '@themes/colors';
 import styled from 'styled-components';
+import { COLORS } from '@themes/colors';
+
 import { Props } from './Avatar';
-
-
 
 export const Container = styled.button<Props>`
   display: flex;
@@ -10,11 +9,11 @@ export const Container = styled.button<Props>`
   align-items: center;
   text-align: center;
 
-  border: none;
-  border-radius: 100%;
-
   width: ${(props) => (props.size ? `${props.size}px` : '45px')};
   height: ${(props) => (props.size ? `${props.size}px` : '45px')};
+
+  border: none;
+  border-radius: 100%;
 
   font-size: 12px;
   color: ${COLORS.WHITE};

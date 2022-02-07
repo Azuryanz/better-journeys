@@ -1,10 +1,11 @@
 import React from 'react';
+
+import { Container } from './styles';
 import Button from './Button';
 import Logo from './Logo';
 import Searchbar from './Searchbar';
 import SignInButton from './SignInButton';
 
-import { Container } from './styles';
 
 type Props = {
   onOpenNewJourneyModal: () => void;

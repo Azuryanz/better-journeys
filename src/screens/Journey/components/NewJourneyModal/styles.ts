@@ -8,23 +8,25 @@ export const Container = styled.form`
   padding: 20px 40px;
 
   h3 {
-    border-bottom: 1px solid ${COLORS.GRAY};
     padding: 10px 5px;
     margin-bottom: 20px;
+
+    border-bottom: 1px solid ${COLORS.GRAY};
   }
 
   input {
-    font-size: 14px;
-
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 10px;
+
+    font-size: 14px;
 
     border-radius: 5px;
   }
 
   p {
     font-size: 14px;
+    
     color: ${props => props.theme.GRAY};
   }
 

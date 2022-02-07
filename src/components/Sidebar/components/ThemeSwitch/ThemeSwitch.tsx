@@ -10,11 +10,6 @@ type Props = {
 
 export const ThemeSwitch = ({ onClick }: Props) => {
   const [checked, setChecked] = useState(false);
-  const [isMounted,setIsMounted] = useState(false); 
-
-  useEffect(() => {
-    setIsMounted(true);
-  },[]);
 
   const handleChange = (checked: boolean) => {
     setChecked(checked);
