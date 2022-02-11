@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     color:${({ theme }) => theme.TEXT};
     font-weight: 400;
     font-style: normal;
-    transition: all 0.50s linear;
+    transition: all 0.3s ease-in-out;
   }
 
   option:hover {

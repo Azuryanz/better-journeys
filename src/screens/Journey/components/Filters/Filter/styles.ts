@@ -48,7 +48,7 @@ export const Container = styled.div`
 
     cursor: default;
 
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
   }
 
   &.standby {
@@ -56,7 +56,7 @@ export const Container = styled.div`
       font-weight: 400;
       color: ${props => props.theme.TEXT};
 
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     span {
@@ -67,7 +67,7 @@ export const Container = styled.div`
       
       filter: brightness(0.95);
 
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     &:hover {
@@ -86,7 +86,7 @@ export const Container = styled.div`
       font-weight: 700;
       color: ${COLORS.PRIMARY};
 
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     span {
@@ -96,7 +96,7 @@ export const Container = styled.div`
 
       filter: brightness(1);
 
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
     }
   }
 `;

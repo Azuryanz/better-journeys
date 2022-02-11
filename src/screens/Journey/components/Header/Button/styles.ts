@@ -42,7 +42,7 @@ export const Container = styled.button`
     left: 0;
     z-index: -1;
 
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease-in-out;
   }
 
   &:hover {

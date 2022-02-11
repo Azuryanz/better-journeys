@@ -54,7 +54,7 @@ export const Container = styled.form`
 
       cursor: pointer;
 
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         background-color: ${props => props.theme.NEUTRAL};

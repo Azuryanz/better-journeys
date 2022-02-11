@@ -31,7 +31,7 @@ export const Container = styled.div`
       
       color: ${props => props.theme.NEUTRAL};
 
-      transition: color 0.3s;
+      transition: color 0.3s ease-in-out;
     }
 
     td {
@@ -39,7 +39,7 @@ export const Container = styled.div`
 
       background-color: ${props => props.theme.FOREGROUND};
 
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease-in-out;
 
       div {
         margin-bottom: 0;
