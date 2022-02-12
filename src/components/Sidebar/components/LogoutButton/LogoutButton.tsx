@@ -23,7 +23,7 @@ export const LogoutButton = ({ icon, name }: Props) => {
  
   return session 
     ? (
-      <Container data-tip data-for={name} onClick={() => signOut({callbackUrl: `https://better-journeys.vercel.app/`})} >
+      <Container data-tip data-for={name} onClick={() => signOut()} >
         <Wrapper>
           {icon}
         </Wrapper>

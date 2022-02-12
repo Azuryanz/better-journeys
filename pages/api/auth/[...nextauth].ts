@@ -14,9 +14,4 @@ export default NextAuth({
     }),
   ],
   secret: process.env.SECRET,
-  callbacks: {
-    async redirect(url, baseURL) {
-      return "https://better-journeys.vercel.app/"
-    }
-  }
 })
