@@ -23,7 +23,7 @@ export const LogoutButton = ({ icon, name }: Props) => {
  
   return session 
     ? (
-      <Container data-tip data-for={name} onClick={() => signOut()} >
+      <Container data-tip data-for={name} onClick={() => signOut({callbackUrl: "/"})} >
         <Wrapper>
           {icon}
         </Wrapper>
