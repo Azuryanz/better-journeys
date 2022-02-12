@@ -37,7 +37,7 @@ export const SignInButton = () => {
       </User>
       ) 
     : (
-      <Container onClick={() => signIn('github', { callbackUrl: `${window.location.href}` })}>
+      <Container onClick={() => signIn('github', { callbackUrl: `https://better-journeys.vercel.app/journey` })}>
         <FaGithub size={20} />
         <p>Sign in with Github</p>
       </Container>
