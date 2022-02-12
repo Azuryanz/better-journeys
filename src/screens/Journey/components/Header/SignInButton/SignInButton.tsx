@@ -37,7 +37,7 @@ export const SignInButton = () => {
       </User>
       ) 
     : (
-      <Container onClick={() => signIn('github', { callbackUrl: "/journey" })}>
+      <Container onClick={() => signIn('github', { callbackUrl: `${window.location.href}` })}>
         <FaGithub size={20} />
         <p>Sign in with Github</p>
       </Container>
