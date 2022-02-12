@@ -22,6 +22,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     theme == 'light' ? setTheme('dark') : setTheme('light')
   }
   
+  console.log(process.env.GITHUB_CLIENT_ID);
+  console.log(process.env.GITHUB_CLIENT_SECRET);
+  console.log(process.env.SECRET);
   return (
     <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState} from 'react';
 
 import { api } from 'src/services/api';
 import { FiltersContext } from 'src/FiltersContext';
@@ -18,9 +18,7 @@ export type Props = {
 }
 
 export function Filter({ id, disabled = false }: Props) {
-  const {filters, setItems} = useContext(FiltersContext);
-  const [state, setState] = useState(id == 0 ? true : false);
-  const [currentFilter, setCurrentFilter] = useState(0);
+  const {filters, setItems, state, currentFilter} = useContext(FiltersContext);
 
   const icons = [
     BsGrid3X3Gap, 
@@ -42,27 +40,34 @@ export function Filter({ id, disabled = false }: Props) {
 
   function handleFilter(id: number) {
     if(!disabled) {
-      if(id > 0 && currentFilter != id) {
-        setCurrentFilter(id)
+      if(id > 0 && currentFilter.current != id) {
+        state.current[currentFilter.current] = false;
+        state.current[id] = true;
+        currentFilter.current = id;
+
         api.get(`/journey/${id}`)
         .then(response => {
           setItems!(response.data)
         })
-      } else if(id > 0 && currentFilter == id) {
-        setCurrentFilter(0)
+      } else if(id > 0 && currentFilter.current == id) {
+        state.current[currentFilter.current] = false;
+        state.current[0] = true;
+        currentFilter.current = 0;
+
         api.get('/journey')
         .then(response => {
           setItems!(response.data);
         })
       } else {
-        setCurrentFilter(0)
+        state.current[currentFilter.current] = false;
+        state.current[0] = true;
+        currentFilter.current = 0;
+        
         api.get('/journey')
         .then(response => {
           setItems!(response.data);
         })
       }
-      setState(!state)
-      console.log(currentFilter)
     }
   }
 
@@ -71,7 +76,7 @@ export function Filter({ id, disabled = false }: Props) {
   return (
     <Container 
       onClick={() => handleFilter(id)} 
-      className={disabled ? 'disabled' : state ? 'active' : 'standby'} 
+      className={disabled ? 'disabled' : state.current[id] ? 'active' : 'standby'} 
       color={colors[id]}
     >
       <div>

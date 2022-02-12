@@ -1,9 +1,11 @@
-import{ createContext, useEffect, useState } from 'react'
+import{ createContext, useEffect, useRef, useState } from 'react'
 import { api } from './services/api';
 
 type FilterProps = {
   filters?: Array<any>;
   items?: Array<any>;
+  state?: any;
+  currentFilter?: any;
   setItems?: (event:any) => void,
 }
 
@@ -16,6 +18,8 @@ export const FiltersContext = createContext<FilterProps>({});
 export function FiltersProvider({children}: FiltersProviderProps) {
   const [filters, setFilters] = useState([]);
   const [items, setItems] = useState<any[]>([]);
+  const state = useRef<boolean[]>([true, false, false, false, false, false])
+  const currentFilter = useRef<number>(0);
 
   useEffect(() => {
     api.get('/journey')
@@ -30,7 +34,7 @@ export function FiltersProvider({children}: FiltersProviderProps) {
   }, []);
 
   return (
-    <FiltersContext.Provider value={{ filters, items, setItems }}>
+    <FiltersContext.Provider value={{ filters, items, setItems, state, currentFilter }}>
       {children}
     </FiltersContext.Provider>
   )
